@@ -42,6 +42,9 @@
  */
 @property (nonatomic, copy) NSString *bucket;
 
+@property (readwrite, nonatomic, copy) NSString *accessKey;
+@property (readwrite, nonatomic, copy) NSString *secret;
+
 /**
  Initializes and returns a newly allocated Amazon S3 client with specified credentials.
 

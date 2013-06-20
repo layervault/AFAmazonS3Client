@@ -6,7 +6,7 @@ Pod::Spec.new do |s|
   s.license      = 'MIT'
   s.author       = { "Mattt Thompson" => "m@mattt.me" }
   s.source       = { :git => "https://github.com/AFNetworking/AFAmazonS3Client.git",
-                     :tag => "0.2.0" }
+                     :tag => "0.2.1" }
 
   s.source_files = 'AFAmazonS3Client'
   s.requires_arc = true

@@ -84,8 +84,6 @@ NSString * AFBase64EncodedStringFromData(NSData *data) {
 #pragma mark -
 
 @interface AFAmazonS3Client ()
-@property (readwrite, nonatomic, copy) NSString *accessKey;
-@property (readwrite, nonatomic, copy) NSString *secret;
 
 - (void)setObjectWithMethod:(NSString *)method
                        file:(NSString *)filePath
