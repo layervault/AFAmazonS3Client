@@ -310,10 +310,8 @@ NSString * AFBase64EncodedStringFromData(NSData *data) {
     NSData *data = [NSURLConnection sendSynchronousRequest:fileRequest returningResponse:&response error:&error];
 
     if (data && response) {
-        NSMutableURLRequest *request = [self multipartFormRequestWithMethod:method path:destinationPath parameters:parameters constructingBodyWithBlock:^(id<AFMultipartFormData> formData) {
-            [formData appendPartWithFormData:[[filePath lastPathComponent] dataUsingEncoding:NSUTF8StringEncoding] name:@"key"];
-            [formData appendPartWithFileData:data name:@"file" fileName:[filePath lastPathComponent] mimeType:[response MIMEType]];
-        }];
+        NSMutableURLRequest *request = [super requestWithMethod:method path:destinationPath parameters:nil];
+        [request setHTTPBody:data];
         [self authorizeRequest:request withPath:destinationPath];
 
         AFHTTPRequestOperation *requestOperation = [self HTTPRequestOperationWithRequest:request success:^(AFHTTPRequestOperation *operation, id responseObject) {
